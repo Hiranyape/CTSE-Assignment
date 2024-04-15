@@ -1,9 +1,7 @@
 version: "3"
 services:
   nosql-db:
-    image: mongo
-    ports:
-      - "27018:27017"
+    image: mvertes/alpine-mongo
     container_name: nosql-db
     volumes:
       - ./db/:/data/db
@@ -11,8 +9,6 @@ services:
   rabbitmq:
     image: rabbitmq:alpine
     container_name: rabbitmq
-    ports:
-      - '5672:5672'
 
   products:
     build:
@@ -64,4 +60,4 @@ services:
       - products
       - customer
     ports:
-      - "8080:80" 
+      - 8080:80
