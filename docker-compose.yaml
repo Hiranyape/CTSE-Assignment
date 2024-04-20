@@ -31,6 +31,27 @@ services:
       - EXCHANGE_NAME=ONLINE_STORE
       - PORT=8002
 
+  shopping:
+    build:
+      dockerfile: Dockerfile
+      context: ./shopping
+    container_name: shopping
+    ports:
+      - "8003:8003"
+    restart: always
+    depends_on:
+      - "nosql-db"
+      - "rabbitmq"
+    volumes:
+      - .:/app
+      - /app/shopping/node_modules
+    environment:
+      - APP_SECRET=MySecretKey
+      - MONGODB_URI=mongodb+srv://hiranya:hiranya@cluster0.dn0whwc.mongodb.net/products?retryWrites=true&w=majority&appName=Cluster0&ssl=true
+      - MSG_QUEUE_URL=amqps://hrldvlgd:Qubq-0oyS2rAu-S0EYHHgyiDHzewkctl@puffin.rmq2.cloudamqp.com/hrldvlgd
+      - EXCHANGE_NAME=ONLINE_STORE
+      - PORT=8003
+      
   customer:
     build:
       dockerfile: Dockerfile
@@ -50,7 +71,7 @@ services:
       - MONGODB_URI=mongodb+srv://hiranya:hiranya@cluster0.dn0whwc.mongodb.net/customer?retryWrites=true&w=majority&appName=Cluster0&ssl=true
       - MSG_QUEUE_URL=amqps://hrldvlgd:Qubq-0oyS2rAu-S0EYHHgyiDHzewkctl@puffin.rmq2.cloudamqp.com/hrldvlgd
       - EXCHANGE_NAME=ONLINE_STORE
-      - PORT=8001
+      - PORT=8002
 
   nginx-proxy:
     build:
@@ -58,6 +79,7 @@ services:
       context: ./proxy
     depends_on:
       - products
+      - shopping
       - customer
     ports:
       - 80:80
