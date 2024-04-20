@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Header from '../components/Header';
+import ProductCard from '../components/ProductCard'
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -26,16 +28,16 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Home Page</h1>
-      <div>
+      <Header></Header>
+      <br></br>
+      <div className="container">
+      <div className="row">
         {products.map(product => (
-          <div key={product._id}>
-            <h2>{product.name}</h2>
-            <p>Description: {product.desc}</p>
-            <p>Price: ${product.price}</p>
-            {/* Add more product details here if needed */}
+          <div key={product._id} className="col-md-4 mb-4">
+            <ProductCard product={product} />
           </div>
         ))}
+      </div>
       </div>
     </div>
   );
