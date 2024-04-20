@@ -32,6 +32,17 @@ jobs:
           echo EXCHANGE_NAME=ONLINE_STORE >> .env
           echo PORT=8002 >> .env
           cat .env
+
+      - name: Create shopping Env file
+        working-directory: ./shopping
+        run: |
+          touch .env
+          echo APP_SECRET=${{ secrets.PROD_APP_SECRET }} >> .env
+          echo MONGODB_URI=${{ secrets.PROD_SHOPPING_DB_URL }} >> .env
+          echo MSG_QUEUE_URL=${{ secrets.PROD_MSG_QUEUE_URL }} >> .env
+          echo EXCHANGE_NAME=ONLINE_STORE >> .env
+          echo PORT=8003 >> .env
+          cat .env
           
       - name: Generate deployment package
         run: |
