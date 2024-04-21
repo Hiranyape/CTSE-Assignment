@@ -1,7 +1,7 @@
 import { GetData, PostData } from '../../utils'
 import { Action } from '../actions'
 
-const CUSTOMER_SERVICE = 'http://localhost:8001'; 
+const CUSTOMER_SERVICE = '/customer'; 
 
 // Function to set authentication token
 export const SetAuthToken = async(token) => {

@@ -1,9 +1,9 @@
-import { DeleteData, GetData, PostData, PutData } from '../../utils'
-import { Action } from '.'
+import { Action } from '.';
+import { DeleteData, GetData, PostData, PutData } from '../../utils';
 
-const PRODUCT_SERVICE = 'http://localhost:8002'; 
-const CUSTOMER_SERVICE = 'http://localhost:8001'; 
-const SHOPPING_SERVICE = 'http://localhost:8003'; 
+const PRODUCT_SERVICE = '/products'; 
+const CUSTOMER_SERVICE = '/customer'; 
+const SHOPPING_SERVICE = '/shopping';
 
 export const onGetProducts = (payload) => async(dispatch) => {
   try {

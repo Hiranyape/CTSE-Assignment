@@ -1,6 +1,6 @@
 FROM node:14.16.0-alpine3.13
 
-WORKDIR /app/frontend
+WORKDIR /app/shopping_app_frontend
 
 COPY package*.json ./
 
