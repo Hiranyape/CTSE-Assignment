@@ -12,7 +12,7 @@ export const OrderItem = ({ item, onTapViewMore }) => {
                     <span> Order ID: {orderId}</span>
                 </div>
                 <div className="col-2 p-2">
-                    <span>₹{amount}</span>
+                    <span>Rs.{amount}.00</span>
                 </div>
             </div>
             

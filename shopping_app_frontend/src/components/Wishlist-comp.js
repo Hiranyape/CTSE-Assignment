@@ -12,7 +12,7 @@ export const WishItem = ({ item, onTapRemove }) => {
             <div className="col p-2">
                 <span className="font-weight-bold">{name}</span>
                 <p className="text-secondary" style={{ fontSize: '0.9rem'}}>{desc}</p>
-                <span>₹{price}</span>
+                <span>Rs.{price}.00</span>
             </div>
             <div className="col-2" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                     <button className="btn bg-warning"

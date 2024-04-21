@@ -144,7 +144,7 @@ const ProductDetails = (props) => {
                       </div>
 
                       <div className="row p-3">
-                           <span style={{ fontSize: 30, fontWeight: 'normal'}}> Price<span className="pl-2" style={{ fontSize: 30, fontWeight: 'bolder'}}>₹{price}</span></span>
+                           <span style={{ fontSize: 30, fontWeight: 'normal'}}> Price<span className="pl-2" style={{ fontSize: 30, fontWeight: 'bolder'}}>Rs.{price}.00</span></span>
                       </div>
                       <div className="row p-3">
                             <p>{desc}</p>

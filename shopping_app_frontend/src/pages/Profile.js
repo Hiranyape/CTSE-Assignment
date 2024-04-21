@@ -112,7 +112,7 @@ const Profile = () => {
            
             return  <div className="row bg-white" style={{ height: '5rem'}}>
             <div className="col-3">
-                <span style={{ fontSize: '1.2rem'}}> Total Amount: <span className="ml-2" style={{ fontSize: '1.2rem', fontWeight: 'bold'}}>{totalAmount}</span></span>
+                <span style={{ fontSize: '1.2rem'}}> Total Amount: <span className="ml-2" style={{ fontSize: '1.2rem', fontWeight: 'bold'}}>Rs.{totalAmount}.00</span></span>
             </div>
             <div className="col-3 ml-auto">
                 <button className="btn btn-lg - btn-danger"
