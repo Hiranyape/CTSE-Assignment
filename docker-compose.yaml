@@ -75,14 +75,14 @@ services:
   frontend:
     build:
       dockerfile: Dockerfile
-      context: ./frontend
+      context: ./shopping_app_frontend
     container_name: frontend
     ports:
       - "3000:3000"
     restart: always
     volumes:
       - .:/app/
-      - /app/frontend/node_modules
+      - /app/shopping_app_frontend/node_modules
 
   nginx-proxy:
     build:
