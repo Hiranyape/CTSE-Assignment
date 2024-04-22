@@ -27,10 +27,14 @@ jobs:
       working-directory: ./customer
       run: |
         npm ci
+        else
+          npm i
         npm test
 
     - name: Test Products Service
       working-directory: ./products
       run: |
         npm ci
+        else
+          npm i
         npm test
