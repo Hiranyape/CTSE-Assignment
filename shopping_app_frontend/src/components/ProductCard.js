@@ -11,7 +11,6 @@ const ProductCard = ({item}) => {
                   <img variant="top" style={{ width: '12rem'}} src={banner} />
                   <div className="col" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end'}}>
                     <p className="display-5" style={{ fontSize: '1.2rem', color: '#3C3C3C'}}>{name}</p>
-                    <span className="m-1"style={{ fontSize: '0.8rem'}}>{desc}</span>
                     <p className="text-secondary font-weight-bold">Rs.{price}.00</p>
                   </div>
                 </div> 
